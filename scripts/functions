@@ -1,0 +1,92 @@
+/* query and remove
+const p = document.querySelector('p')
+p.remove() */
+
+/* query all and remove
+const p = document.querySelectorAll('p')
+p.forEach(function (p){
+     //p.remove()
+     //console.log(p.textContent)
+     p.textContent = 'La casa de papel'
+})
+
+const p = document.querySelectorAll('p')
+p.forEach(function (p){
+     if(p.textContent.toLowerCase().includes('the'))
+          p.remove()
+})
+ */
+
+/* const incompletetodos = todos.filter(function (todo){
+      return !todo.completed
+ })
+
+ add new para
+ const summary = document.createElement('h3')
+summary.textContent = `There are ${incompletetodos.length} todos remaining`
+document.querySelector('body').appendChild(summary) 
+todos.forEach(function (todo){
+     const newParagraph = document.createElement('p')
+     newParagraph.textContent = todo.text
+     document.querySelector('body').appendChild(newParagraph)
+})
+
+listen to button
+document.querySelector('button').addEventListener('click', function(e){
+    console.log('did this work') 
+    e.target.textContent = 'it did work'
+})
+
+document.querySelectorAll('button')[1].addEventListener('click', function(e){
+    console.log('did this work') 
+    e.target.textContent = 'it did work'
+})
+})*/
+
+print input
+/* document.querySelector('#search-text').addEventListener('change', function(e){
+    console.log(e.target.value)
+})
+ */
+
+print from form
+document.querySelector('#name-form').addEventListener('submit', function(e){
+    e.preventDefault()
+    console.log(e.target.elements.firstName.value)
+})
+
+
+inserting and storing data
+/* const user = {
+    name: 'Soumyadeep',
+    age: 24
+}
+
+const userJson = JSON.stringify(user)
+console.log(userJson)
+localStorage.setItem('user', userJson) */
+
+//localStorage.setItem('location', 'Siliguri')
+// console.log( localStorage.getItem('location'))
+// localStorage.removeItem('location')
+//localStorage.clear()
+
+
+date
+/* const now = new Date()
+const timestamp = now.getTime()
+const myDate = new Date(timestamp)
+console.log(myDate.toString())
+console.log(now.getTime())
+console.log(`Year: ${now.getFullYear()}`) */
+
+const now = dayjs().subtract(7 , 'week')
+console.log(now.format('MMMM D, YYYY'))
+console.log(now.fromNow())
+
+const nowTimeStamp = now.valueOf()
+console.log(nowTimeStamp)
+console.log(dayjs(nowTimeStamp).toString())
+
+const birthday = dayjs('06-10-1997')
+console.log(birthday.format('MMM D,YYYY'))
